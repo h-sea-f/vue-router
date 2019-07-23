@@ -1,10 +1,9 @@
 <template>
     <div>
-        <home></home>
         <ol>
             <li v-for="(item, index) in getShowList" v-bind:key="item.id" v-bind:class="{checked:item.completed}"
                 :id="item.id">
-                <input name="done-todo" type="checkbox" class="done-todo" :id="item.id" v-model="item.completed" @change="changeCompleted">
+                <input name="done-todo" type="checkbox" class="done-todo" :id="item.id" :checked="item.completed"  @change="changeCompleted">
                 <span v-bind:contenteditable="true" @blur="updateItem" :id="item.id" >{{item.content}}</span>
                 <button @click="deleteItem" :id="item.id">删除</button>
             </li>
@@ -13,15 +12,12 @@
 </template>
 <script>
     import { mapGetters } from 'vuex'
-    import home from './Home'
     export default {
         name: 'List',
-        components: {
-          home
-        },
+
         computed: {
             // status(){
-            //     return this.$store.state.status;
+            //     return this.$store.state.status;=
             // },
             // itemsShow: function () {
             //     return this.$store.getters.getShowList(this.status)
@@ -37,7 +33,7 @@
                 this.$store.dispatch('deleteItem',e.target.id);
             },
             changeCompleted(e){
-                this.$store.dispatch('updateItem',{id:e.target.id,completed:!e.completed})
+                this.$store.dispatch('updateItem',{id:e.target.id,completed:e.target.checked})
             }
 
         }

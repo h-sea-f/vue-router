@@ -6,6 +6,9 @@
             <li><router-link to="/to-do-list">TodoList列表</router-link></li>
             <li><router-link to="/my">我的</router-link></li>
         </ol>
+        <div>
+            <router-view></router-view>
+        </div>
     </div>
 
 </template>
