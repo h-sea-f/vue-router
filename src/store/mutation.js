@@ -10,5 +10,8 @@ export default {
     },
     loadItems(state,itemList) {
         state.items = itemList;
+    },
+    addUserName(state,name){
+      state.name = name;
     }
 }

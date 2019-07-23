@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         items: [],
-        status: 0
+        status: 0,
+        name:""
     },
     getters,
     mutations,

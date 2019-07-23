@@ -1,5 +1,6 @@
 <template>
     <div>
+        <home></home>
         <ol>
             <li v-for="(item, index) in getShowList" v-bind:key="item.id" v-bind:class="{checked:item.completed}"
                 :id="item.id">
@@ -12,8 +13,12 @@
 </template>
 <script>
     import { mapGetters } from 'vuex'
+    import home from './Home'
     export default {
         name: 'List',
+        components: {
+          home
+        },
         computed: {
             // status(){
             //     return this.$store.state.status;
