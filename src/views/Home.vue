@@ -11,15 +11,18 @@
 <!--                </a-menu-item>-->
                 <a-menu-item key="2">
                     <a-icon type="rollback" />
-                    <span><router-link to="/">返回</router-link></span>
+                    <span>返回</span>
+                    <router-link to="/"></router-link>
                 </a-menu-item>
                 <a-menu-item key="3">
                     <a-icon type="check-square" />
-                    <span><router-link to="/to-do-list">TodoList列表</router-link></span>
+                    <span>TodoList列表</span>
+                    <router-link to="/to-do-list">TodoList列表</router-link>
                 </a-menu-item>
                 <a-menu-item key="4">
                     <a-icon type="user" />
-                    <span><router-link to="/my">我的</router-link></span>
+                    <span>我的</span>
+                    <router-link to="/my">我的</router-link>
                 </a-menu-item>
             </a-menu>
         </a-layout-sider>
@@ -30,7 +33,7 @@
                         :type="collapsed ? 'menu-unfold' : 'menu-fold'"
                         @click="()=> collapsed = !collapsed"
                 />
-                <div style="float:right">Hi:{{getUserName}}</div>
+                <div style="float:right;padding-right: 10px">Hi:{{getUserName}}</div>
             </a-layout-header>
             <a-layout-content>
                 <router-view></router-view>
@@ -54,6 +57,9 @@
             return {
                 collapsed: false,
             }
+        },
+        methods: {
+
         },
         beforeRouteLeave(to,from,next){
             const answer = window.confirm('确认返回欢迎页面吗')
