@@ -1,9 +1,10 @@
 import axios from 'axios'
+import {MUTATION} from "./mutation-types";
 const url ="http://localhost:3001/todos";
 export default {
 
     getItems({commit}) {
-        axios.get(url).then((response) => commit('loadItems',response.data))
+        axios.get(url).then((response) => commit(''+[MUTATION[1]],response.data))
             .catch((error) => console.log(error))
     },
     addItem(context,item){

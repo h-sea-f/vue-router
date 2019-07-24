@@ -1,17 +1,21 @@
+import {ADDITEM} from "./mutation-types";
+import {UPDATE_ITEM} from "./mutation-types";
+import {MUTATION} from "./mutation-types";
+
 export default {
-    addItem(state, item) {
+    [MUTATION[3]](state, item) {
         state.items.push(item);
     },
-    updateItem(state, updateItem) {
+    [MUTATION[4]](state, updateItem) {
         state.items.filter((i) => {return i.id === parseInt(updateItem.id)})[0].content = updateItem.content;
     },
-    updateStatus(state,status){
+    [MUTATION[0]](state,status){
         state.status = status;
     },
-    loadItems(state,itemList) {
+    [MUTATION[1]](state,itemList) {
         state.items = itemList;
     },
-    addUserName(state,name){
+    [MUTATION[2]](state,name){
       state.name = name;
     }
 }
