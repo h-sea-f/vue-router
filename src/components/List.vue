@@ -5,7 +5,8 @@
                 :id="item.id">
                 <input name="done-todo" type="checkbox" class="done-todo" :id="item.id" :checked="item.completed"  @change="changeCompleted">
                 <span v-bind:contenteditable="true" @blur="updateItem" :id="item.id" >{{item.content}}</span>
-                <button @click="deleteItem" :id="item.id">删除</button>
+<!--                <button @click="deleteItem" :id="item.id">删除</button>-->
+                <a-button type="danger" @click="deleteItem" :id="item.id" size="small">删除</a-button>
             </li>
         </ol>
     </div>
@@ -43,4 +44,8 @@
 
 
 </script>
-<style></style>
+<style scoped>
+    button{
+        float:right;
+    }
+</style>
