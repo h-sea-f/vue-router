@@ -1,5 +1,6 @@
 <template>
     <div id="main">
+        <div><a-avatar size="large" icon="user"/></div>
         <div>
             <span>输入姓名</span><input type="text" v-model="userName">
         </div>
@@ -31,6 +32,9 @@
     #main {
         text-align: center;
         margin-top: 10%;
+    }
+    div{
+        margin:10px;
     }
 </style>
 

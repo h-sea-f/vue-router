@@ -5,20 +5,20 @@
                         collapsible
                         v-model="collapsed" style="background: #fff; padding: 0">
             <a-menu theme="light" mode="inline" :defaultSelectedKeys="['1']">
-                <a-menu-item key="1">
-                    <a-icon type="user" />
-                    <span>姓名：{{getUserName}}</span>
-                </a-menu-item>
+<!--                <a-menu-item key="1">-->
+<!--                    <a-icon type="user" />-->
+<!--                    <span>姓名：{{getUserName}}</span>-->
+<!--                </a-menu-item>-->
                 <a-menu-item key="2">
-                    <a-icon type="video-camera" />
+                    <a-icon type="rollback" />
                     <span><router-link to="/">返回</router-link></span>
                 </a-menu-item>
                 <a-menu-item key="3">
-                    <a-icon type="upload" />
+                    <a-icon type="check-square" />
                     <span><router-link to="/to-do-list">TodoList列表</router-link></span>
                 </a-menu-item>
                 <a-menu-item key="4">
-                    <a-icon type="upload" />
+                    <a-icon type="user" />
                     <span><router-link to="/my">我的</router-link></span>
                 </a-menu-item>
             </a-menu>
@@ -30,6 +30,7 @@
                         :type="collapsed ? 'menu-unfold' : 'menu-fold'"
                         @click="()=> collapsed = !collapsed"
                 />
+                <div style="float:right">Hi:{{getUserName}}</div>
             </a-layout-header>
             <a-layout-content>
                 <router-view></router-view>
